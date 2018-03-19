@@ -7,8 +7,8 @@ var bookInstancesSchema = new Schema({
 	 	ref: 'book'
 	},
 	'imprint' : String,
-	'status' : String,
-	'due_back' : Date
+	'status' : {type: String, required: true, enum: ['Available', 'Maintenance', 'Loaned', 'Reserved'], default: 'Maintenance'},
+	'due_back' : {type: Date, default: Date.now}
 });
 
 module.exports = mongoose.model('bookInstances', bookInstancesSchema);

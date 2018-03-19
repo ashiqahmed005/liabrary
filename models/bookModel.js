@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 
 var bookSchema = new Schema({
-	'title' : String,
-	'summary' : String,
+	'title' : {type: String, require: true},
+	'summary' : {type: String, required: true},
 	'isbn' : String,
 	'author' : {
 	 	type: Schema.Types.ObjectId,
